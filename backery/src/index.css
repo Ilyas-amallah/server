@@ -1,0 +1,521 @@
+/* ------------------------------
+  Bakery Global Styles
+------------------------------ */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;600&family=Poppins:wght@400;500&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #FFF8E1; /* Creamy vanilla */
+  color: #5C4033; /* Dark chocolate text */
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #5C4033;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #5C4033;
+  transition: color 0.3s;
+}
+
+a:hover { color: #D4A373; }
+
+/* Buttons */
+button {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #D4A373;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #b07b4a;
+  transform: translateY(-2px);
+}
+
+/* ------------------------------
+  Navbar
+------------------------------ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: #FFF3E6;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.navbar .logo a, .logo-text {
+  font-family: 'Playfair Display', serif;
+  color: #4B3621;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.logo-text .logo-accent, .logo-text .accent {
+  font-size: 1.2rem;
+  color: #CDA15C;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: -5px;
+  display: block;
+}
+
+.logo-text .logo-main, .logo-text .main {
+  font-size: 1.8rem;
+  color: #4B3621;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  font-weight: 800;
+  display: block;
+}
+
+.logo-text .logo-main::after, .logo-text .main::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  background-color: #CDA15C;
+  margin: 4px auto 0;
+  border-radius: 2px;
+}
+
+/* Menu */
+.navbar .menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar .menu li { margin-left: 2rem; }
+
+.navbar .menu li a {
+  font-weight: 600;
+  color: #4B3621;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover { color: #CDA15C; }
+
+.logout-btn {
+  background-color: #D4A373;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background-color: #b07b4a;
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.mobile-menu-btn .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #4B3621;
+  margin: 4px 0;
+  transition: all 0.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  background-color: #FFF3E6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu li {
+  padding: 1rem;
+  border-bottom: 1px solid #E0D5C2;
+}
+
+.mobile-menu li:last-child { border-bottom: none; }
+
+.mobile-menu li a {
+  color: #4B3621;
+  font-weight: 600;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar .menu { display: none; }
+  .mobile-menu-btn { display: flex; }
+}
+
+/* ------------------------------
+  Hero Section
+------------------------------ */
+.hero {
+  background: linear-gradient(135deg, #FAEDCD, #FFF8E1);
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.25rem; color: #5C4033; }
+
+/* ------------------------------
+  Product Cards
+------------------------------ */
+.product-card {
+  background-color: #FAEDCD;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-card .card-content { padding: 1rem; }
+.product-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.product-card p { font-size: 1rem; color: #5C4033; }
+
+/* ------------------------------
+  Cart
+------------------------------ */
+.cart-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid #DDD;
+}
+
+.cart-item:last-child { border-bottom: none; }
+
+.cart-item button {
+  background-color: #FF6B6B;
+}
+
+.cart-item button:hover { background-color: #e04e4e; }
+
+/* ------------------------------
+  Forms
+------------------------------ */
+input, select, textarea {
+  font-family: 'Quicksand', sans-serif;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #DDD;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #D4A373;
+}
+
+/* ------------------------------
+  Footer
+------------------------------ */
+.footer {
+  background-color: #FAEDCD;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer p { margin-bottom: 0.5rem; color: #5C4033; }
+
+/* ------------------------------
+  Utilities
+------------------------------ */
+.text-center { text-align: center; }
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+/* ------------------------------
+  Responsive
+------------------------------ */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .product-card img { height: 200px; }
+}
+
+/* ------------------------------
+  Login / Signup Page Styles
+------------------------------ */
+body.login-page {
+  background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth-container {
+  perspective: 1000px;
+}
+
+.auth-card {
+  width: 380px;
+  height: 460px;
+  background-color: #fffaf7;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+.auth-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.auth-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 18px;
+}
+
+.front, .back {
+  background-color: #fffaf7;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  text-align: center;
+  color: #b46b45;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px 15px;
+  border: 1px solid #f0c8b3;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #b46b45;
+  box-shadow: 0 0 4px #e7bfa8;
+}
+
+button.auth-btn {
+  background-color: #b46b45;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.auth-btn:hover {
+  background-color: #a2593b;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #b46b45;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+/* Center Login / Signup Card */
+body.login-page {
+  background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.auth-card {
+  max-width: 380px;
+  width: 100%;
+  height: 460px;
+  background-color: #fffaf7;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Optional: mobile scaling */
+@media (max-height: 500px) {
+  .auth-card {
+    height: 400px;
+  }
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  background-color: #fffaf7;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #5C4033;
+  margin: 10px;
+}
+
+.product-card p {
+  margin: 0 10px 10px;
+  color: #5C4033;
+}
+
+.product-card button {
+  margin: 10px;
+  padding: 10px;
+  background-color: #D4A373;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #b07b4a;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
