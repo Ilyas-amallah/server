@@ -1,10 +1,10 @@
 import mysql from "mysql2";
 
 const db = mysql.createConnection({
-  host: "sql108.infinityfree.com",
-  user: "if0_40385810",
-  password: "jMNV38LmfKV8pK",
-  database: "if0_40385810_backery"
+  host: "sql7.freesqldatabase.com",
+  user: "sql7807675",
+  password: "Ep73tW2h2y",
+  database: "sql7807675"
 });
 
 db.connect((err) => {
